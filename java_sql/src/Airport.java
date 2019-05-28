@@ -11,7 +11,7 @@ public class Airport {
         this.capacity=capacity;
         this.runways=runways;
 
-        String query = String.format("insert into Airports values(%s, %s, %d)", name, location, runways);
+        String query = String.format("insert into airports values(%s, %s, %d, %d)", name, location, capacity, runways);
 
         db.exec(query);
 

@@ -13,9 +13,9 @@ public class Main {
         }
 
         Airport airport1 =new Airport("stefanstefan2","suhodol",69,2);
-        Airport airport2 =new Airport("mitakamadafaka","geto milev",39,3);
+        Airport airport2 =new Airport("mitakamadafaka","getomilev",39,3);
 
-        ResultSet rs = db.exec("select * from Airports");
+        ResultSet rs = db.getSt().executeQuery("select * from airports");
 
         while (rs.next()){
             System.out.printf("%s, %s, %d, %d",

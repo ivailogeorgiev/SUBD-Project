@@ -31,15 +31,13 @@ public class DB {
         return conn;
     }
 
-    public ResultSet exec(String query){
-        ResultSet rs=null;
+    public void exec(String query){
+
 
         try {
-            rs = st.executeQuery(query);
+            st.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            return rs;
         }
 
 
