@@ -1,13 +1,14 @@
 package com.company;
 
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import static java.sql.DriverManager.*;
+import static java.sql.DriverManager.getConnection;
 
-public class Main {
-
-    public static void main(String[] args) {
+public class Airport {
+    public Airport(String Name, String Location, int Runways){
         final String db ="jdbc:mysql://localhost/db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\n";
         final String jdbc_driver ="com.mysql.cj.jdbc.Driver";
 
@@ -27,26 +28,16 @@ public class Main {
             e.printStackTrace();
         }
 
-
-
-        Airport air = new Airport("Sofia", "Sofia", 5);
-        Airport air2 = new Airport("Varna", "Varna", 3);
-
-        String query = "select id, name from Airports";
-
-        ResultSet rs = null;
+    /*
+        String query = "insert into Airports"
+                + "values('"+Name+"', '"+Location+"', '"+Runways+"')";
+    */
+        String query = String.format("insert into Airports values(%s, %s, %d)", Name, Location, Runways);
         try {
-            rs = st.executeQuery(query);
-            while(rs.next()) {
-                int id = rs.getInt("id");
-                String age = rs.getString("name");
-
-                System.out.print("ID: " + id);
-                System.out.print(", Name: " + age);
-            }
-            rs.close();
+            st.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }
