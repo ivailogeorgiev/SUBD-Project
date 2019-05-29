@@ -20,3 +20,4 @@ create table flights(
 
 alter table airports auto_increment=11;
 alter table flights auto_increment=101;
+

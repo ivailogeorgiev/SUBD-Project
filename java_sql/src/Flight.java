@@ -40,7 +40,7 @@ public class Flight {
         if(originID!=null&&destinationID!=null){
             query=String.format("insert into flights(originID,destinationID,duration) values(%d,%d,%d)",originID,destinationID,duration.toMinutes());
             db.exec(query);
-            System.out.println("flight created");
+            System.out.println("Flight created.");
         }
 
 

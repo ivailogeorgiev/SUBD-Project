@@ -11,7 +11,6 @@ public class DB {
     private Connection conn =null;
     private Statement st = null;
 
-
     public DB() {
         try {
             Class.forName(jdbc_driver);

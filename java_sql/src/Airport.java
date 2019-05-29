@@ -13,5 +13,6 @@ public class Airport {
 
         db.exec(query);
 
+        System.out.println("Airport created.");
     }
 }
