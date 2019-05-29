@@ -43,7 +43,6 @@ public class Flight {
             System.out.println("flight created");
         }
 
-        System.out.printf(originID+" "+destinationID);
 
     }
 
