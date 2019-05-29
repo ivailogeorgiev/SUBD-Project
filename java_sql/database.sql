@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 drop database if exists db;
+=======
+/drop database if exists db;
+>>>>>>> 609d9906ec132676cd1a96cc9134f816906bbc13
 create database db;
 use db;
 
@@ -13,12 +17,10 @@ create table flights(
 	id integer auto_increment primary key,
     originID integer not null,
     destinationID integer not null,
+    duration integer not null,
     foreign key(originID) references airports(id),
     foreign key(destinationID) references airports(id)
 );
 
-alter table flights add duration integer not null;
 alter table airports auto_increment=11;
 alter table flights auto_increment=101;
-
-select * from flights
