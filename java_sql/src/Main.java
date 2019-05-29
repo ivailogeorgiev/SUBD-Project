@@ -15,6 +15,9 @@ public class Main {
         //Airport airport2 =new Airport("mitakamadafaka","getomilev",3);
         //Flight flight = new Flight("suhodol","getomilev", Duration.ofHours(1));
 
+        Plane plane1 = new Plane("boing747",300);
+        Plane plane2 = new Plane("boing69",69);
+
         ResultSet rs = db.getSt().executeQuery("select * from flights f inner join airports a on f.originID = a.id or f.destinationID = a.id");
 
         while(rs.next()) {
@@ -117,7 +120,7 @@ public class Main {
         System.out.println("Menu");
         System.out.println("Create an airport(A): You need to enter name, location and runways(number).");
         System.out.println("See all airports(AA).");
-        System.out.println("Create a flight(F): You need to enter origin, destination and durotion of the flight.");
+        System.out.println("Create a flight(F): You need to enter origin, destination and duration of the flight.");
         System.out.println("See all flights(AF).");
         System.out.println("Exit(E)");
     }
