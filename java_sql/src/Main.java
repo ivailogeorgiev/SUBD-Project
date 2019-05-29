@@ -15,7 +15,7 @@ public class Main {
 
         ResultSet rs = db.getSt().executeQuery("select * from flights");
 
-        while (rs.next()){
+        while(rs.next()) {
             System.out.printf("%d, %d, %d\n",
                     rs.getInt("originID"),
                     rs.getInt("destinationID"),
