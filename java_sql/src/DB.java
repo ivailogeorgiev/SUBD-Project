@@ -17,7 +17,7 @@ public class DB {
             Class.forName(jdbc_driver);
             conn = DriverManager.getConnection(db,username,password);
             st = conn.createStatement();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -32,7 +32,6 @@ public class DB {
     }
 
     public void exec(String query){
-
 
         try {
             st.executeUpdate(query);
