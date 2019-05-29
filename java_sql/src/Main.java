@@ -127,7 +127,7 @@ public class Main {
         System.out.println("Create an airport(A): You need to enter name, location and runways(number).");
         System.out.println("Delete airport(DA).");
         System.out.println("See all airports(AA).");
-        System.out.println("Create a flight(F): You need to enter origin, destination and durotion of the flight.");
+        System.out.println("Create a flight(F): You need to enter origin, destination and duration of the flight.");
         System.out.println("Delete flight(DF).");
         System.out.println("See all flights(AF).");
         System.out.println("Exit(E)");
