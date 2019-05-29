@@ -1,18 +1,15 @@
 public class Plane {
-    int maxSeats;
-    String name;
+    int capacity;
+    String model;
     DB db = new DB();
 
-    public Plane(int maxSeats, String name) {
-        this.maxSeats = maxSeats;
-        this.name = name;
 
-        String query = String.format("insert into plane(name,maxSeats) values('%s', %d)", name, maxSeats);
+    public Plane( String model,int capacity) {
+        this.capacity = capacity;
+        this.model = model;
+
+        String query = String.format("insert into planes(model,capacity) values('%s',%d)",model,capacity);
 
         db.exec(query);
-    }
-
-    public String getName() {
-        return name;
     }
 }

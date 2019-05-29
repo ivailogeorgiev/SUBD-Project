@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
+
         //Airport airport1 =new Airport("stefanstefan2","suhodol",2);
         //Airport airport2 =new Airport("mitakamadafaka","getomilev",3);
         //Flight flight = new Flight("suhodol","getomilev", Duration.ofHours(1));
@@ -67,15 +68,27 @@ public class Main {
                     rs = db.getSt().executeQuery("select * from airports");
 
                     for(int i = 1; rs.next(); i++){
-                        System.out.printf("%d. Airport %s in %s with %d runways.\n",
+                        System.out.printf("%d. Airport %d - %s in %s with %d runways.\n",
                                 i,
+                                rs.getInt("id"),
                                 rs.getString("Name"),
                                 rs.getString("Location"),
                                 rs.getInt("Runways"));
 
                     }
 
-                    printMenu();
+                    break;
+
+                case "DA":
+                    System.out.print("Enter airport to delete(id): ");
+                    Scanner idAScanner = new Scanner(System.in);
+
+                    int idA = idAScanner.nextInt();
+
+                    String queryA = String.format("delete from airports where id = %d", idA);
+                    db.getSt().executeUpdate(queryA);
+
+                    System.out.printf("Airport number %d deleted.\n", idA);
                     break;
 
                 case "F":
@@ -84,7 +97,7 @@ public class Main {
                     System.out.println("Enter origin: ");
                     String origin = flightScanner.nextLine();
 
-                    System.out.println("Enter location: ");
+                    System.out.println("Enter destination: ");
                     String destination = flightScanner.nextLine();
 
                     System.out.println("Enter duration(minutes): ");
@@ -111,7 +124,18 @@ public class Main {
 
                     }
 
-                    printMenu();
+                    break;
+
+                case "DF":
+                    System.out.print("Enter flight to delete(id): ");
+                    Scanner idFScanner = new Scanner(System.in);
+
+                    int idF = idFScanner.nextInt();
+
+                    String queryF = String.format("delete from flights where id = %d", idF);
+                    db.getSt().executeUpdate(queryF);
+
+                    System.out.printf("Airport number %d deleted.\n", idF);
                     break;
 
                 case "E":
@@ -130,8 +154,10 @@ public class Main {
     public static void printMenu(){
         System.out.println("Menu");
         System.out.println("Create an airport(A): You need to enter name, location and runways(number).");
+        System.out.println("Delete airport(DA).");
         System.out.println("See all airports(AA).");
-        System.out.println("Create a flight(F): You need to enter origin, destination and durotion of the flight.");
+        System.out.println("Create a flight(F): You need to enter origin, destination and duration of the flight.");
+        System.out.println("Delete flight(DF).");
         System.out.println("See all flights(AF).");
         System.out.println("Exit(E)");
     }
