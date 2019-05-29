@@ -8,12 +8,14 @@ public class Flight {
     String origin;
     String destination;
     Duration duration;
+    Plane plane;
     DB db = new DB();
 
     public Flight(String origin, String destination, Duration duration) throws SQLException {
         this.origin = origin;
         this.destination=destination;
         this.duration=duration;
+        this.plane = plane;
 
         ResultSet rs = null;
 
@@ -36,6 +38,13 @@ public class Flight {
 
             destinationID=rs.getInt("id");
         }
+
+//        query=String.format("select id from planes '%s'",plane.getName());
+//        rs = db.getSt().executeQuery(query);
+//        while(rs.next()){
+//
+//            destinationID=rs.getString("name");
+//        }
 
         if(originID!=null&&destinationID!=null){
             query=String.format("insert into flights(originID,destinationID,duration) values(%d,%d,%d)",originID,destinationID,duration.toMinutes());

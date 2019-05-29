@@ -15,27 +15,38 @@ public class Main {
         //Airport airport2 =new Airport("mitakamadafaka","getomilev",3);
         //Flight flight = new Flight("suhodol","getomilev", Duration.ofHours(1));
 
-        ResultSet rs = db.getSt().executeQuery("select * from flights f inner join airports a on f.originID = a.id or f.destinationID = a.id");
-
-        while(rs.next()) {
-            System.out.printf("%d, %d, %d %s %s\n",
-                    rs.getInt("originID"),
-                    rs.getInt("destinationID"),
-                    rs.getInt("duration"),
-                    rs.getString("location"),
-                    rs.getString("name")
-            );
-        }
+        ResultSet rs = null;
 
         Scanner scanner = new Scanner(System.in);
         List<Flight> flights = new ArrayList<>();
         List<Airport> airports = new ArrayList<>();
+        Passenger passenger = null;
 
         printMenu();
         while(scanner.hasNextLine()){
             String input = scanner.nextLine();
 
             switch (input){
+                case "P":
+                    System.out.println("Creating passenger.");
+                    Scanner passengerScanner = new Scanner(System.in);
+                    System.out.println("Enter name: ");
+                    String pname = passengerScanner.nextLine();
+
+                    System.out.println("Enter age: ");
+                    int age = passengerScanner.nextInt();
+
+                    passengerScanner.nextLine();
+                    System.out.println("Enter gender: ");
+                    String gender = passengerScanner.nextLine();
+
+                    System.out.println("Enter Starting Location: ");
+                    String startingLocation = passengerScanner.nextLine();
+                    passenger = new Passenger(pname, age, gender,startingLocation);
+
+                    printMenu();
+                    break;
+
                 case "A":
                     System.out.println("Creating airport.");
                     Scanner airportScanner = new Scanner(System.in);
@@ -85,14 +96,17 @@ public class Main {
 
                 case "AF":
 
-                    rs = db.getSt().executeQuery("select f.id, a.name, an.name, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id");
+                    rs = db.getSt().executeQuery("select f.id, a.Location, an.Location, f.duration from flights f\n" +
+                            "inner join airports a on f.originID = a.id\n" +
+                            "inner join airports an on f.destinationID = an.id\n" +
+                            "inner join passenger p on a.Location = p.startingLocation");
 
                     for(int i = 1; rs.next(); i++){
                         System.out.printf("%d. Flight number %d from %s to %s has duration of %d minutes.\n",
                                 i,
                                 rs.getInt("f.id"),
-                                rs.getString("a.name"),
-                                rs.getString("an.name"),
+                                rs.getString("a.Location"),
+                                rs.getString("an.Location"),
                                 rs.getInt("f.duration"));
 
                     }
