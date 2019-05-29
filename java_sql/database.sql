@@ -26,7 +26,18 @@ create table flights(
     foreign key(destinationID) references airports(id)
 );
 
+create table passenger(
+    id integer auto_increment primary key,
+    Name varchar(150) not null,
+    age integer not null,
+    gender varchar(150) not null,
+    startingLocation varchar(150) not null
+);
+
 alter table airports auto_increment=11;
 alter table planes auto_increment=11;
 alter table flights auto_increment=101;
+
+
+
 
