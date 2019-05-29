@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 drop database if exists db;
-=======
-/drop database if exists db;
->>>>>>> 609d9906ec132676cd1a96cc9134f816906bbc13
 create database db;
 use db;
 

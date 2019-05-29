@@ -8,12 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        //Airport airport1 =new Airport("stefanstefan2","suhodol",2);
-        //Airport airport2 =new Airport("mitakamadafaka","getomilev",3);
+//        Airport airport1 =new Airport("stefanstefan2","suhodol",2);
+//        Airport airport2 =new Airport("mitakamadafaka","getomilev",3);
+//
+//        Flight flight = new Flight("suhodol","getomilev", Duration.ofHours(1));
 
-        //Flight flight = new Flight("suhodol","getomilev", Duration.ofHours(1));
-
-        ResultSet rs = db.getSt().executeQuery("select * from flights");
+        ResultSet rs = db.getSt().executeQuery("select * from flights f" +
+                                                    "inner join airports a on f.originID = a.id or f.destinationID = a.id");
 
         while(rs.next()) {
             System.out.printf("%d, %d, %d\n",
