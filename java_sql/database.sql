@@ -32,7 +32,7 @@ create table passenger(
     Name varchar(150) not null,
     age integer not null,
     gender varchar(150) not null,
-    startingLocation varchar(150) not null
+    location varchar(150) not null
 );
 
 alter table airports auto_increment=11;

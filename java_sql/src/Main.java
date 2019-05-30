@@ -9,14 +9,25 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        String [] planeModels = {"Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
-        "Airbus A340-600","Boeing 777-300","Boeing 747-400","Boeing 747-8","Airbus A380-800"
+        String [] planeModels =
+        {
+            "Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
+            "Airbus A340-600","Boeing 777-300","Boeing 747-400","Boeing 747-8","Airbus A380-800"
         };
 
-        Arrays.stream(planeModels).forEach(p->new Plane(p,300));
-
-
         ResultSet rs;
+
+        String query = "select count(*) from planes where airportID is null";
+
+        rs = db.getSt().executeQuery(query);
+
+        if(rs.next()){
+            int count = rs.getInt("count(*)");
+            if(count == 0){
+                Arrays.stream(planeModels).forEach(p->new Plane(p,300));
+            }
+        }
+
 
         Scanner scanner = new Scanner(System.in);
 
@@ -63,7 +74,7 @@ public class Main {
                                 rs.getString("name"),
                                 rs.getInt("age"),
                                 rs.getString("gender"),
-                                rs.getString("startingLocation")
+                                rs.getString("location")
                         );
                     }
 
@@ -258,14 +269,18 @@ public class Main {
                     break;
 
                 case "APL":
-                    rs = db.getSt().executeQuery("select * from planes");
+                    rs = db.getSt().executeQuery("select * from planes p left join airports a on a.id = p.airportID");
 
                     for(int i = 1; rs.next(); i++){
-                        System.out.printf("%d. Plane number %d that is %s model and has %d capacity.\n",
+                        String s = rs.getString("a.Location");
+                        s=s==null?"doesn't belong to airport":String.format("belongs to %s",s);
+
+                        System.out.printf("%d. Plane number %d that is %s model and has capacity of %s, %s.\n",
                                 i,
                                 rs.getInt("id"),
                                 rs.getString("model"),
-                                rs.getInt("capacity")
+                                rs.getInt("capacity"),
+                                s
                         );
                     }
 
