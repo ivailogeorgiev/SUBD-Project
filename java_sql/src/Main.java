@@ -9,29 +9,16 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        String [] planeModels =
-        {
-            "Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
-            "Airbus A340-600","Boeing 777-300","Boeing 747-400","Boeing 747-8","Airbus A380-800"
+        String [] planeModels = {"Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
+        "Airbus A340-600","Boeing 777-300","Boeing 747-400","Boeing 747-8","Airbus A380-800"
         };
 
-        ResultSet rs;
+        Arrays.stream(planeModels).forEach(p->new Plane(p,300));
 
-        String query = "select count(*) from planes where airportID is null";
-
-        rs = db.getSt().executeQuery(query);
-
-        if(rs.next()){
-            int count = rs.getInt("count(*)");
-            if(count == 0){
-                Arrays.stream(planeModels).forEach(p->new Plane(p,300));
-            }
-        }
-
+        ResultSet rs = null;
 
         Scanner scanner = new Scanner(System.in);
 
-        db.getSt().executeUpdate("delete from passenger");
         Passenger passenger = null;
 
         printMenu();
@@ -75,7 +62,7 @@ public class Main {
                                 rs.getString("name"),
                                 rs.getInt("age"),
                                 rs.getString("gender"),
-                                rs.getString("location")
+                                rs.getString("startingLocation")
                         );
                     }
 
@@ -83,24 +70,29 @@ public class Main {
                     break;
 
                 case "EP":
-                    System.out.println("Creating passenger.");
-                    Scanner passengerScanner = new Scanner(System.in);
+                    System.out.println("Editing passenger.");
+                    Scanner passengerEScanner = new Scanner(System.in);
 
-                    System.out.println("Enter name: ");
-                    String pname = passengerScanner.nextLine();
+                    System.out.println("Enter new name: ");
+                    String newname = passengerEScanner.nextLine();
 
-                    System.out.println("Enter age: ");
-                    int age = passengerScanner.nextInt();
+                    System.out.println("Enter new age: ");
+                    int newage = passengerEScanner.nextInt();
 
-                    passengerScanner.nextLine();
+                    passengerEScanner.nextLine();
 
-                    System.out.println("Enter gender: ");
-                    String gender = passengerScanner.nextLine();
+                    System.out.println("Enter new gender: ");
+                    String newgender = passengerEScanner.nextLine();
 
-                    System.out.println("Enter location: ");
-                    String startingLocation = passengerScanner.nextLine();
+                    System.out.println("Enter new location: ");
+                    String newlocation = passengerEScanner.nextLine();
 
+                    String queryEP = String.format("update passenger set name = '%s', age = %d, gender = '%s', startingLocation = '%s'", newname, newage, newgender, newlocation);
+                    db.exec(queryEP);
 
+                    System.out.println("Passenger has been edited.");
+                    printMenu();
+                    break;
 
                 case "A":
                     System.out.println("Creating airport.");
@@ -141,13 +133,7 @@ public class Main {
                     int idA = idAScanner.nextInt();
 
                     String queryA = String.format("delete from airports where id = %d", idA);
-                    db.exec(queryA);
-
-                    String queryF = String.format("delete from flights where originID = %d or destinationID = %d", idA, idA);
-                    db.exec(queryF);
-
-                    String queryP = String.format("delete from planes where airportID = %d", idA);
-                    db.exec(queryP);
+                    db.getSt().executeUpdate(queryA);
                     //delete flights and planes linked to this airport
 
                     System.out.printf("Airport number %d deleted.\n", idA);
@@ -156,6 +142,9 @@ public class Main {
                 case "F":
                     System.out.println("Creating flight.");
                     Scanner flightScanner = new Scanner(System.in);
+
+                    /*System.out.println("Enter plane model: ");
+                    String planeModelF = flightScanner.nextLine();*/
 
                     System.out.println("Enter origin: ");
                     String origin = flightScanner.nextLine();
@@ -195,19 +184,50 @@ public class Main {
                     break;
 
                 case "AF":
-                    rs = db.getSt().executeQuery("select f.id, p.model, a.name, an.name, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id left join planes p on p.airportID = a.id");
+
+                    rs = db.getSt().executeQuery("select f.id, p.model, a.Location, an.Location, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id inner join planes p on p.airportID = a.id");
 
                     for(int i = 1; rs.next(); i++){
                         System.out.printf("%d. Flight number %d with %s plane from %s to %s has duration of %d minutes.\n",
                                 i,
                                 rs.getInt("f.id"),
                                 rs.getString("p.model"),
-                                rs.getString("a.name"),
-                                rs.getString("an.name"),
+                                rs.getString("a.Location"),
+                                rs.getString("an.Location"),
                                 rs.getInt("f.duration"));
 
                     }
 
+                    break;
+
+                case "EF":
+                    System.out.println("Editing flight.");
+                    Scanner flightEScanner = new Scanner(System.in);
+
+                    System.out.println("Which flight do you want to edit? ");
+                    int flightID = flightEScanner.nextInt();
+
+                    flightEScanner.nextLine();
+                    System.out.println("Enter new origin: ");
+                    String neworigin = flightEScanner.nextLine();
+
+                    System.out.println("Enter new destination: ");
+                    String newdestination = flightEScanner.nextLine();
+
+                    System.out.println("Enter new duration(minutes): ");
+                    int newdurationMin = flightEScanner.nextInt();
+
+                    String queryY = String.format("select a.id, an.id from flights f inner join airports a on a.Location = '%s' inner join airports an on an.Location = '%s'", neworigin, newdestination);
+                    rs = db.getSt().executeQuery(queryY);
+
+                    String queryEF = null;
+                    while(rs.next()) {
+                        queryEF = String.format("update flights f set originID = %d, destinationID = %d, duration = %d where f.id = %d ", rs.getInt("a.id"), rs.getInt("an.id"), newdurationMin, flightID);
+                    }
+                    db.exec(queryEF);
+
+                    System.out.println("Flight has been edited.");
+                    printMenu();
                     break;
 
                 case "DF":
@@ -216,8 +236,16 @@ public class Main {
 
                     int idF = idFScanner.nextInt();
 
-                    String queryDF = String.format("delete from flights where id = %d", idF);
-                    db.getSt().executeUpdate(queryDF);
+                    try {
+                        db.getConn().setAutoCommit(false);
+
+                        String queryF = String.format("delete from flights where id = %d", idF);
+                        db.getSt().executeUpdate(queryF);
+
+                        db.getConn().commit();
+                    }catch(SQLException e) {
+                        db.getConn().rollback();
+                    }
 
                     System.out.printf("Airport number %d deleted.\n", idF);
                     break;
@@ -238,18 +266,14 @@ public class Main {
                     break;
 
                 case "APL":
-                    rs = db.getSt().executeQuery("select * from planes p left join airports a on a.id = p.airportID");
+                    rs = db.getSt().executeQuery("select * from planes");
 
                     for(int i = 1; rs.next(); i++){
-                        String s = rs.getString("a.Location");
-                        s=s==null?"doesn't belong to airport":String.format("belongs to %s",s);
-
-                        System.out.printf("%d. Plane number %d that is %s model and has capacity of %s, %s.\n",
+                        System.out.printf("%d. Plane number %d that is %s model and has %d capacity.\n",
                                 i,
                                 rs.getInt("id"),
                                 rs.getString("model"),
-                                rs.getInt("capacity"),
-                                s
+                                rs.getInt("capacity")
                         );
                     }
 
@@ -260,9 +284,16 @@ public class Main {
                     Scanner idPLScanner = new Scanner(System.in);
 
                     int idPL = idPLScanner.nextInt();
+                    try {
+                        db.getConn().setAutoCommit(false);
 
-                    String queryPL = String.format("delete from planes where id = %d", idPL);
-                    db.getSt().executeUpdate(queryPL);
+                        String queryPL = String.format("delete from planes where id = %d", idPL);
+                        db.getSt().executeUpdate(queryPL);
+                        db.getConn().commit();
+
+                    }catch(SQLException e) {
+                        db.getConn().rollback();
+                    }
 
                     System.out.printf("Plane number %d deleted.\n", idPL);
                     break;
@@ -290,6 +321,7 @@ public class Main {
         System.out.println("Delete flight(DF).");
         System.out.println("See all flights(AF).");
         System.out.println("Filter flights(FF).");
+        System.out.println("Edit flight(EF).");
 
         System.out.println("Create a plane(PL): You need to enter plane model and capacity.");
         System.out.println("Delete plane(DPL).");
@@ -297,6 +329,7 @@ public class Main {
 
         System.out.println("Create a passenger(P): You need to enter name, age, gender starting location.");
         System.out.println("Show passenger(SP).");
+        System.out.println("Edit passenger(EP).");
 
         System.out.println("Exit(E)");
     }
