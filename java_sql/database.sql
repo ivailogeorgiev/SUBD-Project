@@ -9,6 +9,12 @@ create table airports(
     Runways integer not null
 );
 
+create table planes(
+	id integer auto_increment primary key,
+    model varchar(100),
+    capacity integer not null
+);
+
 create table flights(
 	id integer auto_increment primary key,
     originID integer not null,
@@ -18,12 +24,6 @@ create table flights(
     foreign key(planeID) references planes(id),
     foreign key(originID) references airports(id),
     foreign key(destinationID) references airports(id)
-);
-
-create table planes(
-	id integer auto_increment primary key,
-    model varchar(100),
-    capacity integer not null
 );
 
 alter table airports auto_increment=11;
