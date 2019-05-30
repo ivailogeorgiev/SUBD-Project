@@ -5,8 +5,8 @@ public class DB {
     static final String db ="jdbc:mysql://localhost/db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static final String jdbc_driver ="com.mysql.cj.jdbc.Driver";
 
-    static final String username = "Ivailo";
-    static final String password = "";
+    static final String username = "root";
+    static final String password = "root";
 
     private Connection conn =null;
     private Statement st = null;
