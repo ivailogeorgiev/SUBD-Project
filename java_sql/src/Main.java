@@ -9,11 +9,11 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        /*String [] planeModels = {"Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
+        String [] planeModels = {"Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
         "Airbus A340-600","Boeing 777-300","Boeing 747-400","Boeing 747-8","Airbus A380-800"
         };
 
-        Arrays.stream(planeModels).forEach(p->new Plane(p,300));*/
+        Arrays.stream(planeModels).forEach(p->new Plane(p,300));
 
         ResultSet rs;
 
@@ -46,8 +46,8 @@ public class Main {
                         String gender = passengerScanner.nextLine();
 
                         System.out.println("Enter location: ");
-                        String location = passengerScanner.nextLine();
-                        passenger = new Passenger(pname, age, gender, location);
+                        String startingLocation = passengerScanner.nextLine();
+                        passenger = new Passenger(pname, age, gender, startingLocation);
                     }else{
                         System.out.println("You cannot create more than one passenger.");
                     }
@@ -69,6 +69,26 @@ public class Main {
 
                     printMenu();
                     break;
+
+                case "EP":
+                    System.out.println("Creating passenger.");
+                    Scanner passengerScanner = new Scanner(System.in);
+
+                    System.out.println("Enter name: ");
+                    String pname = passengerScanner.nextLine();
+
+                    System.out.println("Enter age: ");
+                    int age = passengerScanner.nextInt();
+
+                    passengerScanner.nextLine();
+
+                    System.out.println("Enter gender: ");
+                    String gender = passengerScanner.nextLine();
+
+                    System.out.println("Enter location: ");
+                    String startingLocation = passengerScanner.nextLine();
+
+
 
                 case "A":
                     System.out.println("Creating airport.");
@@ -142,15 +162,21 @@ public class Main {
                 case "FF":
                     if(passenger!=null){
 
-                        rs = db.getSt().executeQuery("select f.id, a.Location, an.Location, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id inner join passenger p on a.Location = p.location");
+                        rs = db.getSt().executeQuery("select f.id, a.Location, an.Location, pl.model, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id inner join passenger p on a.Location = p.startingLocation inner join planes pl on pl.airportID = a.id");
 
                         for(int i = 1; rs.next(); i++){
 
-                            System.out.printf("%s %s\n.",
+                            System.out.printf("%d. Flight number %d with %s plane from %s to %s has duration of %d minutes.\n",
+                                    i,
+                                    rs.getInt("f.id"),
+                                    rs.getString("pl.model"),
                                     rs.getString("a.Location"),
-                                    rs.getString("an.Location")
-                            );
+                                    rs.getString("an.Location"),
+                                    rs.getInt("f.duration"));
                         }
+                    }
+                    else {
+                        System.out.println("You must first create a passenger.");
                     }
 
 
@@ -164,8 +190,8 @@ public class Main {
                                 i,
                                 rs.getInt("f.id"),
                                 rs.getString("p.model"),
-                                rs.getString("a.name"),
-                                rs.getString("an.name"),
+                                rs.getString("a.Location"),
+                                rs.getString("an.Location"),
                                 rs.getInt("f.duration"));
 
                     }
