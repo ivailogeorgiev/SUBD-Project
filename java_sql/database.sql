@@ -1,4 +1,4 @@
-drop database if exists db;
+/*drop database if exists db;
 create database db;
 use db;
 
@@ -38,12 +38,4 @@ create table passenger(
 alter table airports auto_increment=11;
 alter table planes auto_increment=11;
 alter table flights auto_increment=101;
-
-
-
-
-  
-
-
-
-
+*/
