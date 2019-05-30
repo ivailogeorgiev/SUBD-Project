@@ -1,18 +1,11 @@
 public class Passenger {
-    Flight flight;
-    String name;
-    int age;
-    String gender;
-    String startingLocation;
+
     DB db = new DB();
 
-    public Passenger(String name, int age, String gender, String startingLocation) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.startingLocation = startingLocation;
+    public Passenger(String name, int age, String gender, String location) {
 
-        String query = String.format("insert into passenger(name,startingLocation, gender, age) values('%s', '%s', '%s', %d)", name, startingLocation, gender, age);
+
+        String query = String.format("insert into passenger(name,location, gender, age) values('%s', '%s', '%s', %d)", name, location, gender, age);
 
         db.exec(query);
 

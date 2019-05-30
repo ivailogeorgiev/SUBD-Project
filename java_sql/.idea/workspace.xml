@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="21dd8801-19b9-458d-ad96-4a056a07f4c3" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="21dd8801-19b9-458d-ad96-4a056a07f4c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../test/.idea/libraries/mysql_mysql_connector_java_8_0_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/src/DB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/AlternateBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/AlternateBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/Body.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/DrawerContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/ItemCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/ItemForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/book/BookForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/book/BookForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signIn/SignInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signIn/SignInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/AddressForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/AddressForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/AvatarForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/AvatarForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/BasicInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/BasicInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/FormBase.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/FormBase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/StepperForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/components/forms/signUp/StepperForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/components/layout/Navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../My/React/tp-app/src/config/FirebaseConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../My/React/tp-app/src/config/FirebaseConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../web_project/web-term-project" beforeDir="false" />
+    </list>
+>>>>>>> cf9b122aaf0e9542836e0578eb5cda36447402da
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,39 +42,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DB.java">
+        <entry file="file://$PROJECT_DIR$/src/Passenger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Flight.java">
+        <entry file="file://$PROJECT_DIR$/src/Airport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Plane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="312">
               <caret line="143" column="26" lean-forward="true" selection-start-line="143" selection-start-column="26" selection-end-line="143" selection-end-column="26" />
+=======
+            <state relative-caret-position="241">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+>>>>>>> cf9b122aaf0e9542836e0578eb5cda36447402da
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,6 +70,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5580">
@@ -61,27 +81,33 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Passenger.java">
+=======
+        <entry file="file://$PROJECT_DIR$/src/Flight.java">
+>>>>>>> cf9b122aaf0e9542836e0578eb5cda36447402da
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="172">
+              <caret line="40" column="15" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database.sql">
+        <entry file="file://$PROJECT_DIR$/src/Plane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="153">
+              <caret line="9" column="88" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Airport.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state relative-caret-position="-2319">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -98,11 +124,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</find>
-      <find>=======</find>
+      <find />
       <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
-      <find>HEAD</find>
       <find>568</find>
       <find>Ivailo</find>
+      <find>F</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,17 +137,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Airport.java" />
+        <option value="$PROJECT_DIR$/src/DB.java" />
         <option value="$PROJECT_DIR$/src/Passengers.java" />
-        <option value="$PROJECT_DIR$/src/Plane.java" />
-        <option value="$PROJECT_DIR$/src/Flight.java" />
-        <option value="$PROJECT_DIR$/src/Plane.java" />
-        <option value="$PROJECT_DIR$/src/Flight.java" />
         <option value="$PROJECT_DIR$/src/DB.java" />
         <option value="$PROJECT_DIR$/src/DB.java" />
+        <option value="$PROJECT_DIR$/src/Plane.java" />
+        <option value="$PROJECT_DIR$/src/Plane.java" />
+        <option value="$PROJECT_DIR$/src/Plane.java" />
         <option value="$PROJECT_DIR$/src/Passenger.java" />
+        <option value="$PROJECT_DIR$/src/Airport.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Flight.java" />
+        <option value="$PROJECT_DIR$/src/Flight.java" />
+        <option value="$PROJECT_DIR$/src/Flight.java" />
       </list>
     </option>
   </component>
@@ -137,7 +166,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,7 +183,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,11 +191,12 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559156583102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559224709377" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunDashboard">
@@ -212,10 +242,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.128943" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -227,7 +257,11 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.35223556" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29745042" />
+>>>>>>> cf9b122aaf0e9542836e0578eb5cda36447402da
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -249,10 +283,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/java_sql.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.attach_pid21178" />
     <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16-sources.jar!/com/mysql/cj/jdbc/exceptions/SQLError.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -260,62 +290,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Flight.java">
+    <entry file="file://$PROJECT_DIR$/.attach_pid21178" />
+    <entry file="file://$PROJECT_DIR$/src/DB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Plane.java">
+    <entry file="file://$PROJECT_DIR$/out/production/java_sql/Plane.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/java_sql/Main.class">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="5580">
+          <caret line="382" column="15" selection-start-line="382" selection-start-column="15" selection-end-line="382" selection-end-column="15" />
+=======
+        <state relative-caret-position="-3520">
+          <folding>
+            <element signature="e#0#9715#0" expanded="true" />
+          </folding>
+>>>>>>> cf9b122aaf0e9542836e0578eb5cda36447402da
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/description.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dbnavigator.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5580">
-          <caret line="382" column="15" selection-start-line="382" selection-start-column="15" selection-end-line="382" selection-end-column="15" />
+        <state relative-caret-position="212">
+          <caret line="391" column="49" lean-forward="true" selection-start-line="391" selection-start-column="49" selection-end-line="391" selection-end-column="49" />
+          <folding>
+            <element signature="e#10732#10736#0" expanded="true" />
+            <element signature="e#10736#10740#0" expanded="true" />
+            <element signature="e#10740#10744#0" expanded="true" />
+            <element signature="e#10744#10748#0" expanded="true" />
+            <element signature="e#10748#10752#0" expanded="true" />
+            <element signature="e#10752#10756#0" expanded="true" />
+            <element signature="e#10756#10760#0" expanded="true" />
+            <element signature="e#10795#10799#0" expanded="true" />
+            <element signature="e#10799#10803#0" expanded="true" />
+            <element signature="e#10803#10807#0" expanded="true" />
+            <element signature="e#10807#10811#0" expanded="true" />
+            <element signature="e#10811#10815#0" expanded="true" />
+            <element signature="e#10815#10819#0" expanded="true" />
+            <element signature="e#10819#10823#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java_sql.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Passenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Plane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="88" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Airport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+<<<<<<< HEAD
+        <state relative-caret-position="312">
+          <caret line="143" column="26" lean-forward="true" selection-start-line="143" selection-start-column="26" selection-end-line="143" selection-end-column="26" />
+=======
+        <state relative-caret-position="241">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+>>>>>>> cf9b122aaf0e9542836e0578eb5cda36447402da
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB.java">
+    <entry file="file://$PROJECT_DIR$/src/Flight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Passenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="172">
+          <caret line="40" column="15" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="143" column="26" lean-forward="true" selection-start-line="143" selection-start-column="26" selection-end-line="143" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2319">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
