@@ -9,11 +9,11 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        String [] planeModels = {"Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
+        /*String [] planeModels = {"Airbus A333-300","Airbus A340-300","Airbus A340-500","Airbus A350-900","Boeing 777-200",
         "Airbus A340-600","Boeing 777-300","Boeing 747-400","Boeing 747-8","Airbus A380-800"
         };
 
-        Arrays.stream(planeModels).forEach(p->new Plane(p,300));
+        Arrays.stream(planeModels).forEach(p->new Plane(p,300));*/
 
         ResultSet rs = null;
 
@@ -155,7 +155,7 @@ public class Main {
                 case "AF":
 
                     //to change
-                    rs = db.getSt().executeQuery("select f.id, p.model, a.name, an.name, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id inner join planes p on p.id = f.planeID");
+                    rs = db.getSt().executeQuery("select f.id, p.model, a.name, an.name, f.duration from flights f inner join airports a on f.originID = a.id inner join airports an on f.destinationID = an.id inner join planes p on p.airportID = a.id");
 
                     for(int i = 1; rs.next(); i++){
                         System.out.printf("%d. Flight number %d with %s plane from %s to %s has duration of %d minutes.\n",

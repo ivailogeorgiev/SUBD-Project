@@ -2,15 +2,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Airport {
-    String name;
-    String location;
-    int runways;
+
     DB db =new DB();
 
     public Airport(String name, String location, int runways) throws SQLException {
-        this.name=name;
-        this.location=location;
-        this.runways=runways;
 
         //crate airport
         String query = String.format("insert into airports(name,location,runways) values('%s', '%s', %d)", name, location, runways);
@@ -29,7 +24,7 @@ public class Airport {
 
 
         //link plane with airport
-        query=String.format("update planes set airportID = %d where id = (select id from planes where airportID is null limit 1)",airportID);
+        query=String.format("update planes set airportID = %d where airportID is null limit 1",airportID);
 
         db.exec(query);
 

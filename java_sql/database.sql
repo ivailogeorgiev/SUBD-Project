@@ -21,9 +21,7 @@ create table flights(
 	id integer auto_increment primary key,
     originID integer not null,
     destinationID integer not null,
-    planeID integer not null,
     duration integer not null,
-    foreign key(planeID) references planes(id),
     foreign key(originID) references airports(id),
     foreign key(destinationID) references airports(id)
 );
@@ -37,10 +35,11 @@ create table passenger(
     startingLocation varchar(150) not null
 );
 
-
 alter table airports auto_increment=11;
 alter table planes auto_increment=11;
 alter table flights auto_increment=101;
+
+
 
 
   
