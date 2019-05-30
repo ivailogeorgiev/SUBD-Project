@@ -3,16 +3,16 @@ public class Passenger {
     String name;
     int age;
     String gender;
-    String startingLocation;
+    String location;
     DB db = new DB();
 
-    public Passenger(String name, int age, String gender, String startingLocation) {
+    public Passenger(String name, int age, String gender, String location) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-        this.startingLocation = startingLocation;
+        this.location = location;
 
-        String query = String.format("insert into passenger(name,startingLocation, gender, age) values('%s', '%s', '%s', %d)", name, startingLocation, gender, age);
+        String query = String.format("insert into passenger(name,location, gender, age) values('%s', '%s', '%s', %d)", name, location, gender, age);
 
         db.exec(query);
 

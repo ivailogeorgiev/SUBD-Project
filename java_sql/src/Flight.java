@@ -5,17 +5,9 @@ import java.time.Duration;
 
 public class Flight {
 
-    String origin;
-    String destination;
-    Duration duration;
-    Plane plane;
     DB db = new DB();
 
-    public Flight(String origin, String destination, Duration duration, String planeModel) throws SQLException {
-        this.origin = origin;
-        this.destination = destination;
-        this.duration = duration;
-        this.plane = plane;
+    public Flight(String origin, String destination, Duration duration) throws SQLException {
 
         ResultSet rs = null;
 
@@ -27,7 +19,7 @@ public class Flight {
 
         query = String.format("select id from airports where location like '%s'", origin);
         rs = db.getSt().executeQuery(query);
-        while (rs.next()) {
+        if (rs.next()) {
 
             originID = rs.getInt("id");
         }
@@ -35,27 +27,25 @@ public class Flight {
 
         query = String.format("select id from airports where location like '%s'", destination);
         rs = db.getSt().executeQuery(query);
-        while (rs.next()) {
+        if (rs.next()) {
 
             destinationID = rs.getInt("id");
         }
 
         if (originID != null && destinationID != null) {
-            query = String.format("insert into flights(originID,destinationID,duration) values(%d,%d,%d)", originID, destinationID, duration.toMinutes());
-            query = String.format("select id from planes where model like '%s'", planeModel);
-            rs = db.getSt().executeQuery(query);
-            while (rs.next()) {
 
+            query = String.format("select id from planes pl inner join airports a on pl.airportID = a.id where a.location = '%s' limit 1", origin);
+            rs = db.getSt().executeQuery(query);
+            if (rs.next()) {
                 planeID = rs.getInt("id");
             }
 
-            if (originID != null && destinationID != null && planeID != null) {
+            if (originID != null && destinationID != null) {
                 query = String.format("insert into flights(originID,destinationID,planeID,duration) values(%d,%d,%d,%d)", originID, destinationID, planeID, duration.toMinutes());
                 db.exec(query);
                 System.out.println("Flight created.");
             } else {
                 System.out.println("Could not create flight");
-                if (planeID == null) System.out.printf("No plane with model %s\n", planeModel);
                 if (originID == null) System.out.printf("No airport with location %s\n", origin);
                 if (destinationID == null) System.out.printf("No airport with location %s\n", destination);
             }
