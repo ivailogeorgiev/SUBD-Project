@@ -38,6 +38,11 @@ public class Airport {
         }
         catch (SQLException e) {
             e.printStackTrace();
+            try {
+                db.getConn().rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 }

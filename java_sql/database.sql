@@ -1,4 +1,4 @@
-/*drop database if exists db;
+drop database if exists db;
 create database db;
 use db;
 
@@ -32,10 +32,10 @@ create table passenger(
     Name varchar(150) not null,
     age integer not null,
     gender varchar(150) not null,
-    startingLocation varchar(150) not null
+    location varchar(150) not null
 );
 
 alter table airports auto_increment=11;
 alter table planes auto_increment=11;
 alter table flights auto_increment=101;
-*/
+

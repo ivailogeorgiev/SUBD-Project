@@ -34,11 +34,6 @@ public class Flight {
 
         if (originID != null && destinationID != null) {
 
-            /*query = String.format("select pl.id from planes pl inner join airports a on pl.airportID = a.id where a.location = '%s' limit 1", origin);
-            rs = db.getSt().executeQuery(query);
-            if (rs.next()) {
-                planeID = rs.getInt("id");
-            }*/
 
             if (originID != null && destinationID != null) {
                 query = String.format("insert into flights(originID,destinationID,duration) values(%d,%d,%d)", originID, destinationID, duration.toMinutes());
